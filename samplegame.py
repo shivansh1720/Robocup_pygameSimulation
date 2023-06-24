@@ -1,45 +1,75 @@
 import pygame
 import os
 import math
-o = 50
+# o = 50
 
 width, height = 1200,800
 f_width, f_height = 1100,700
-D_yposition = 177.5
-G_yposition = 252.5
-D_r_xposition = 875
-G_r_xposition = 1025
-thickness = 6.25
-D_width = 112.5
-D_length = 345
-G_width = 37.5
-G_length = 195
+# D_yposition = 177.5
+# G_yposition = 252.5
+# D_r_xposition = 875
+# G_r_xposition = 1025
+# thickness = 6.25
+# D_width = 112.5
+# D_length = 345
+# G_width = 37.5
+# G_length = 195
 
 win = pygame.display.set_mode((width,height))
 FPS = 60
 green = (0,255,0)
 white = (255,255,255)
-border_c = pygame.Rect(width/2 - thickness/2 + 1, o , thickness , height - 2*o)
-border_fl = pygame.Rect(o , o , thickness , height - 2*o)
-border_fr = pygame.Rect(f_width + o + 1 - thickness , o , thickness , height - 100)
-border_fu = pygame.Rect(o , o , width - 2*o , thickness)
-border_fd = pygame.Rect(o , f_height + o + 1 - thickness , width - 2*o , thickness)
-goall_1_u = pygame.Rect(o , o + D_yposition , D_width , thickness)
-goall_1_d = pygame.Rect(o , o + D_length + D_yposition , D_width , thickness)
-goall_1_l = pygame.Rect(o + D_width , o + D_yposition , thickness , D_length+thickness )
-goall_2_u = pygame.Rect(o , o + G_yposition, G_width , thickness)
-goall_2_d = pygame.Rect(o , o + G_yposition + G_length , G_width , thickness)
-goall_2_l = pygame.Rect(o + G_width , o + G_yposition , thickness , G_length + thickness)
-goalr_1_u = pygame.Rect(o + D_width + D_r_xposition, o + D_yposition , D_width , thickness)
-goalr_1_d = pygame.Rect(o + D_width + D_r_xposition, o + D_length + D_yposition , D_width , thickness)
-goalr_1_l = pygame.Rect(o + D_width + D_r_xposition, o + D_yposition , thickness , D_length + thickness )
-goalr_2_u = pygame.Rect(o + G_width + G_r_xposition , o + G_yposition , G_width , thickness)
-goalr_2_d = pygame.Rect(o + G_width + G_r_xposition , o + G_yposition + G_length , G_width , thickness)
-goalr_2_l = pygame.Rect(o + G_width + G_r_xposition , o + G_yposition , thickness , G_length + thickness)
+# border_c = pygame.Rect(width/2 - thickness/2 + 1, o , thickness , height - 2*o)
+# border_fl = pygame.Rect(o , o , thickness , height - 2*o)
+# border_fr = pygame.Rect(f_width + o + 1 - thickness , o , thickness , height - 100)
+# border_fu = pygame.Rect(o , o , width - 2*o , thickness)
+# border_fd = pygame.Rect(o , f_height + o + 1 - thickness , width - 2*o , thickness)
+# goall_1_u = pygame.Rect(o , o + D_yposition , D_width , thickness)
+# goall_1_d = pygame.Rect(o , o + D_length + D_yposition , D_width , thickness)
+# goall_1_l = pygame.Rect(o + D_width , o + D_yposition , thickness , D_length+thickness )
+# goall_2_u = pygame.Rect(o , o + G_yposition, G_width , thickness)
+# goall_2_d = pygame.Rect(o , o + G_yposition + G_length , G_width , thickness)
+# goall_2_l = pygame.Rect(o + G_width , o + G_yposition , thickness , G_length + thickness)
+# goalr_1_u = pygame.Rect(o + D_width + D_r_xposition, o + D_yposition , D_width , thickness)
+# goalr_1_d = pygame.Rect(o + D_width + D_r_xposition, o + D_length + D_yposition , D_width , thickness)
+# goalr_1_l = pygame.Rect(o + D_width + D_r_xposition, o + D_yposition , thickness , D_length + thickness )
+# goalr_2_u = pygame.Rect(o + G_width + G_r_xposition , o + G_yposition , G_width , thickness)
+# goalr_2_d = pygame.Rect(o + G_width + G_r_xposition , o + G_yposition + G_length , G_width , thickness)
+# goalr_2_l = pygame.Rect(o + G_width + G_r_xposition , o + G_yposition , thickness , G_length + thickness)
 
 
 def draw_window():
     win.fill(green)
+    o = 50
+    width, height = 1200,800
+    f_width, f_height = 1100,700
+    D_yposition = 177.5
+    G_yposition = 252.5
+    D_r_xposition = 875
+    G_r_xposition = 1025
+    thickness = 6.25
+    D_width = 112.5
+    D_length = 345
+    G_width = 37.5
+    G_length = 195
+    border_c = pygame.Rect(width/2 - thickness/2 + 1, o , thickness , height - 2*o)
+    border_fl = pygame.Rect(o , o , thickness , height - 2*o)
+    border_fr = pygame.Rect(f_width + o + 1 - thickness , o , thickness , height - 100)
+    border_fu = pygame.Rect(o , o , width - 2*o , thickness)
+    border_fd = pygame.Rect(o , f_height + o + 1 - thickness , width - 2*o , thickness)
+    goall_1_u = pygame.Rect(o , o + D_yposition , D_width , thickness)
+    goall_1_d = pygame.Rect(o , o + D_length + D_yposition , D_width , thickness)
+    goall_1_l = pygame.Rect(o + D_width , o + D_yposition , thickness , D_length+thickness )
+    goall_2_u = pygame.Rect(o , o + G_yposition, G_width , thickness)
+    goall_2_d = pygame.Rect(o , o + G_yposition + G_length , G_width , thickness)
+    goall_2_l = pygame.Rect(o + G_width , o + G_yposition , thickness , G_length + thickness)
+    goalr_1_u = pygame.Rect(o + D_width + D_r_xposition, o + D_yposition , D_width , thickness)
+    goalr_1_d = pygame.Rect(o + D_width + D_r_xposition, o + D_length + D_yposition , D_width , thickness)
+    goalr_1_l = pygame.Rect(o + D_width + D_r_xposition, o + D_yposition , thickness , D_length + thickness )
+    goalr_2_u = pygame.Rect(o + G_width + G_r_xposition , o + G_yposition , G_width , thickness)
+    goalr_2_d = pygame.Rect(o + G_width + G_r_xposition , o + G_yposition + G_length , G_width , thickness)
+    goalr_2_l = pygame.Rect(o + G_width + G_r_xposition , o + G_yposition , thickness , G_length + thickness)
+
     pygame.draw.rect(win,white,border_c)
     pygame.draw.rect(win,white,border_fl)
     pygame.draw.rect(win,white,border_fr)
@@ -65,10 +95,8 @@ def draw_window():
     pygame.draw.rect(win,white, goalr_2_u)
     pygame.draw.rect(win,white, goalr_2_d)
     pygame.draw.rect(win,white, goalr_2_l)
-    
-    
-
     pygame.display.update()
+
 
 
 def main():
